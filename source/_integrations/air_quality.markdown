@@ -23,6 +23,7 @@ The platforms cover the following levels (if they are available):
 - The CO2 (carbon dioxide) level.
 - The SO2 (sulphur dioxide) level.
 - The N2O (nitrogen oxide) level.
+- The NH3 (ammonia) level.
 - The NO (nitrogen monoxide) level.
 - The NO2 (nitrogen dioxide) level.
 

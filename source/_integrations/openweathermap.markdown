@@ -3,6 +3,7 @@ title: OpenWeatherMap
 description: Instructions on how to integrate OpenWeatherMap within Home Assistant.
 ha_release: 0.32
 ha_category:
+  - Health
   - Sensor
   - Weather
 ha_iot_class: Cloud Polling
@@ -13,6 +14,7 @@ ha_codeowners:
   - '@nzapponi'
 ha_domain: openweathermap
 ha_platforms:
+  - health
   - sensor
   - weather
 ha_integration_type: integration
@@ -27,8 +29,11 @@ There is currently support for the following device types within Home Assistant:
 
 - Sensor
 - Weather
+- Air Quality
 
 You need an API key, it requires a [subscription](https://openweathermap.org/api/one-call-3). The subscription has a free tier with 1000 calls/day. Consider setting the limit on the OpenWeatherMap website to stay under the threshold where API usage incurs a cost. This is done in the [Billing plans](https://home.openweathermap.org/subscriptions) page, under "Calls per day".
+
+The above does not include calls to the [Air Pollution API](https://openweathermap.org/api/air-pollution), which allows 60 calls/minutes for free.
 
 ## ⚠️ Important Deprecation Notice
 
@@ -96,3 +101,18 @@ The Weather entity provides data only in English. Home Assistant automatically t
 | `wind_speed`             | Wind speed, meter/sec.                                                                                                            |
 
 Details about the API are available in the [OpenWeatherMap documentation](https://openweathermap.org/api).
+
+## Supported Air Quality Conditions
+
+### Current Air Quality Conditions
+| Condition | Description                                                                                                         |
+| :---------| :------------------------------------------------------------------------------------------------------------------ |
+| `aqi`     | Air Quality Index, from 1 to 5. See [here](https://openweathermap.org/air-pollution-index-levels) for more details. |
+| `co`      | Concentration of CO (Carbon Monoxide), μg/m3                                                                        |
+| `no`      | Concentration of NO (Nitrogen Monoxide), μg/m3                                                                      |
+| `no2`     | Concentration of NO2 (Nitrogen dioxide), μg/m3                                                                      |
+| `o3`      | Concentration of O3 (Ozone), μg/m3                                                                                  |
+| `so2`     | Concentration of SO2 (Sulphur Dioxide), μg/m3                                                                       |
+| `pm2_5`   | Concentration of PM2.5 (Particulate Matter 2.5), μg/m3                                                              |
+| `pm10`    | Concentration of PM2.5 (Particulate Matter 10), μg/m3                                                               |
+| `nh3`     | Concentration of NH3 (Ammonia), μg/m3                                                                               |
